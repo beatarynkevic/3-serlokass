@@ -1,26 +1,29 @@
 body {
     background-color: #b1d8d860;
-    display: inline-block;
-    text-align: center;
+    display: grid;
+    grid-template-areas: 
+        ". paveiksliukas . tekstas .";
+    grid-template-columns: 1fr 300px 30px 400px 1fr; 
 }
+/* (100%ekrano plocio -700pxploti kuri zinome) /2= nezinomas sono plotis */
     img {
+        grid-area: paveiksliukas;
         display: inline-block;
-        width: 30%;
-        float: left;
-        margin: 50px 0 0 250px;
+        width: 100%;
+        margin-top: 20%;
     }
     div {
+        grid-area: tekstas;
+        margin-top: 20%;
+        text-align: center;
         display: inline-block;
-        width: 30%;
-        margin-top: 50px;
-        margin-right: 20%; 
-        float: right;
+        width: 100%; 
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
         h1 {
             display: inline-block;
             font-size: 100px;
-            margin: 50px 0 0 0;
+            margin: 0;
         }
         p {
             display: inline-block;
@@ -35,26 +38,11 @@ body {
             padding: 20px;
             text-transform: uppercase;
         }
-@media (max-width: 1100px) {
-    
-    img {
-        width: 40%;
-        float: right;
-        margin-left: 30%;
-        margin-right: 30%;
-    }
-    div {
-        width: 40%;
-        margin-left: 30%;
-        margin-right: 30%;
-        margin-top: 20px; 
-        float: left;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    h1 {
-        font-size: 35px;
-    }
-    p {
-        font-size: 25px;
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 50px 1fr 50px; 
+        grid-template-areas: 
+        ". tekstas ."
+        ". paveiksliukas .";
     }
 }
